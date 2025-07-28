@@ -16,6 +16,14 @@ role: {
 type: String, 
 enum: ['user', 'admin'], 
 default: 'user' 
+},
+balance: { 
+type: Number, 
+default: 0 
+},
+profileImage: {
+	type: String,
+	default: ''
 } 
 }); 
 // Password Hashing Before Save 
