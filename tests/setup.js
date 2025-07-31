@@ -3,7 +3,7 @@ const { MongoMemoryServer } = require('mongodb-memory-server');
 let mongo; 
 beforeAll(async () => { 
 mongo = await MongoMemoryServer.create(); 
-const uri = mongo.getUri(); 
+const uri = mongo.getUri().toString(); 
 await mongoose.connect(uri, { 
 useNewUrlParser: true, 
 useUnifiedTopology: true, 
