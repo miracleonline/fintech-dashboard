@@ -9,6 +9,8 @@ const transactionRoutes = require('./routes/transactionRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const { swaggerUi, swaggerSpec } = require('./swagger'); 
 const profileRoutes = require('./routes/profileRoutes'); 
+const healthRoute = require('./routes/health'); 
+
 
 
 
@@ -31,5 +33,6 @@ app.use('/api/profile', profileRoutes);
 app.use('/api/video', profileRoutes); 
 app.use('/uploads', express.static('uploads'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api', healthRoute); 
 
 module.exports = app;
