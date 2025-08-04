@@ -1,21 +1,25 @@
-name: Run Tests on Push 
+name: Test and Deploy to Railway 
 on: 
 push: 
 branches: [ main ] 
 pull_request: 
 branches: [ main ] 
 jobs: 
-test: 
+test-and-deploy: 
 runs-on: ubuntu-latest 
 services: 
 mongo: 
 image: mongo 
-ports: 
-- 27017:27017 
-steps: - name: Checkout Repository 
+ports: - 27017:27017 
+steps: - name: Checkout code 
 uses: actions/checkout@v3 - name: Set up Node.js 
 uses: actions/setup-node@v3 
 with: 
-node-version: 18 - name: Install Dependencies 
-run: npm install - name: Run Tests 
-run: npm test 
+node-version: 18 - name: Install dependencies 
+run: npm install - name: Run tests 
+run: npm test - name: Install Railway CLI 
+run: npm install -g @railway/cli - name: Deploy to Railway (only if tests pass) 
+if: success()  # This ensures deployment only runs if tests passed 
+env: 
+RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }} 
+run: railway up --service fintech-dashboard 
