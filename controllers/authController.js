@@ -23,7 +23,8 @@ res.status(201).json({
 _id: user._id, 
 username: user.username, 
 role: user.role, 
-token: createToken(user) 
+token: createToken(user),
+message: "success"
 }); 
 }; 
 // @desc    Login user 
