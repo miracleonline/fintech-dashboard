@@ -6,6 +6,7 @@ import { validate } from '../middleware/validate.js';
 
 const router = Router();
 
+// POST /api/auth/register
 router.post(
   '/register',
   validate([
@@ -16,6 +17,7 @@ router.post(
   register
 );
 
+// POST /api/auth/login
 router.post(
   '/login',
   validate([
@@ -25,6 +27,7 @@ router.post(
   login
 );
 
+// POST /api/auth/me
 router.get('/me', requireAuth, me);
 
 export default router;
