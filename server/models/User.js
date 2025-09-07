@@ -30,7 +30,31 @@ const userSchema = new mongoose.Schema(
     balanceCents: { 
       type: Number, 
       default: 0 
-    }, 
+    },
+    countryCode: {
+      type: String,
+      default: '1',
+      required: true,  
+    },
+    contactNumber: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    accountType: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    secondaryEmail: {
+      type: String,
+      trim: true,
+      lowercase: true,
+    },
+    referral: {
+      type: String,
+      trim: true,
+    } 
   },
   { timestamps: true }
 );

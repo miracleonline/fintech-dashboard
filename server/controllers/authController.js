@@ -8,12 +8,12 @@ const signToken = (user) =>
   jwt.sign({ sub: user._id, role: user.role }, config.jwt.secret, { expiresIn: config.jwt.expiresIn });
 
 export const register = catchAsync(async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, countryCode, contactNumber, accountType, secondaryEmail, referral } = req.body;
 
   const exists = await User.findOne({ email });
   if (exists) throw new ApiError(409, 'Email already in use');
 
-  const user = await User.create({ name, email, password });
+  const user = await User.create({ name, email, password, countryCode, contactNumber, accountType, secondaryEmail, referral });
   const token = signToken(user);
   res.status(201).json({
     success: true,
@@ -23,7 +23,12 @@ export const register = catchAsync(async (req, res) => {
       name: user.name, 
       email: user.email, 
       role: user.role, 
-      balance: user.balanceCents / 100 
+      balance: user.balanceCents / 100,
+      countryCode: user.countryCode,
+      contactNumber: user.contactNumber,
+      accountType: user.accountType,
+      secondaryEmail: user.secondaryEmail || "",
+      referral: user.referral || ""
     }
   });
 });

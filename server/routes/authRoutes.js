@@ -13,6 +13,11 @@ router.post(
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('email').isEmail().withMessage('Valid email required'),
     body('password').isLength({ min: 8 }).withMessage('Min 8 characters'),
+    body('countryCode').trim().notEmpty().withMessage('Country code is required'),
+    body('contactNumber').trim().notEmpty().withMessage('Contact number is required'),
+    body('accountType').trim().notEmpty().withMessage('Account type is required'),
+    body('secondaryEmail').optional().isEmail().withMessage('Secondary email must be valid'),
+    body('referral').optional().isString().trim().withMessage('Referral must be a string'),
   ]),
   register
 );
