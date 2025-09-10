@@ -60,7 +60,7 @@ export const createTransaction = catchAsync(async (req, res) => {
 });
 
 export const listTransactions = catchAsync(async (req, res) => {
-  const { type, start, end } = req.query || {};
+  const { type, start, end, status } = req.query || {};
   const { page, limit, skip } = getPagination(req.query, 10, 100);
 
   const filter = { user: req.user._id };
@@ -70,6 +70,7 @@ export const listTransactions = catchAsync(async (req, res) => {
     if (start) filter.occurredAt.$gte = new Date(start);
     if (end) filter.occurredAt.$lte = new Date(end);
   }
+  if (status && ['Completed', 'Pending', 'Failed'].includes(status)) filter.status = status;
 
   const [items, total] = await Promise.all([
     Transaction.find(filter).sort({ occurredAt: -1, _id: -1 }).skip(skip).limit(limit),

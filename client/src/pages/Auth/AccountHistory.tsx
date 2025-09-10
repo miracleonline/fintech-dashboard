@@ -162,7 +162,7 @@ export default function AccountHistory() {
         )}
         {(start || end) && (
           <span className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm flex items-center gap-1">
-            Date: {start || "…"} → {end || "…"}
+            Start Date - End Date: {start || "…"} → {end || "…"}
             <button onClick={() => clearFilter("date")} className="ml-1 text-gray-500 hover:text-gray-700">×</button>
           </span>
         )}
