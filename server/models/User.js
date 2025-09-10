@@ -39,6 +39,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    address: {
+      type: String,
+      trim: true,
+    },
     accountType: {
       type: String,
       trim: true,
@@ -51,7 +55,11 @@ const userSchema = new mongoose.Schema(
     referral: {
       type: String,
       trim: true,
-    } 
+    },
+    status : {
+      type: String,
+      trim: true,
+    }
   },
   { timestamps: true }
 );
