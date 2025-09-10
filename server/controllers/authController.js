@@ -50,7 +50,12 @@ export const login = catchAsync(async (req, res) => {
       name: user.name, 
       email: user.email, 
       role: user.role, 
-      balance: user.balanceCents / 100 
+      balance: user.balanceCents / 100,
+      countryCode: user.countryCode,
+      contactNumber: user.contactNumber,
+      accountType: user.accountType,
+      secondaryEmail: user.secondaryEmail || "",
+      referral: user.referral || ""
     }
   });
 });

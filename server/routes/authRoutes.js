@@ -15,8 +15,8 @@ router.post(
     body('password').isLength({ min: 8 }).withMessage('Min 8 characters'),
     body('countryCode').trim().notEmpty().withMessage('Country code is required'),
     body('contactNumber').trim().notEmpty().withMessage('Contact number is required'),
-    body('accountType').trim().notEmpty().withMessage('Account type is required'),
-    body('secondaryEmail').optional().isEmail().withMessage('Secondary email must be valid'),
+    body('accountType').trim().notEmpty().isIn(['Single', 'Joint', 'Corporate']).withMessage('Account type is required'),
+    body('secondaryEmail').if(body('accountType').equals('Joint')).isEmail().withMessage('Secondary email must be valid'),
     body('referral').optional().isString().trim().withMessage('Referral must be a string'),
   ]),
   register
