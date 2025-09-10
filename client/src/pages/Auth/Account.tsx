@@ -13,8 +13,10 @@ interface AccountInfo {
 }
 
 export default function Account() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<AccountInfo | null>(null);
   const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState<'overview' | 'preferences'>('overview');
+
 
   useEffect(() => {
     const fetchAccount = async () => {
@@ -105,84 +107,135 @@ export default function Account() {
           <div className="card bg-white dark:bg-gray-900 shadow rounded-xl p-6">
             <ul className="flex border-b border-gray-200 dark:border-gray-700 mb-4">
               <li className="mr-4">
-                <button className="pb-2 text-blue-600 border-b-2 border-blue-600">
+                <button
+                  className={`pb-2 ${activeTab === 'overview' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600'}`}
+                  onClick={() => setActiveTab('overview')}
+                >
                   Overview
                 </button>
               </li>
               <li>
-                <button className="pb-2 text-gray-600 dark:text-gray-400 hover:text-blue-600">
+                <button
+                  className={`pb-2 ${activeTab === 'preferences' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-600 dark:text-gray-400 hover:text-blue-600'}`}
+                  onClick={() => setActiveTab('preferences')}
+                >
                   Preferences
                 </button>
               </li>
             </ul>
 
-            {loading ? (
-              <p className="text-gray-500 dark:text-gray-400">Loading...</p>
-            ) : (
-              <>
-                <h5 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
-                  Account Information
-                </h5>
-                <div className="space-y-3 text-sm">
-                  <div className="flex">
-                    <span className="w-40 font-medium">Account Name:</span>
-                    <span>{user?.name}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Account Number:</span>
-                    <span>{user?._id}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Account Type:</span>
-                    <span>Single Brokerage</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Investment Plan:</span>
-                    <span>Starter</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Status:</span>
-                    <span>{user?.status}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Address:</span>
-                    <span>{user?.address}</span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Phone:</span>
-                    <span>
-                      {user?.countryCode} {user?.phoneNumber}
-                    </span>
-                  </div>
-                  <div className="flex">
-                    <span className="w-40 font-medium">Email:</span>
-                    <span>{user?.email}</span>
-                  </div>
-                </div>
+            <div className="tab-content pt-2">
+              {activeTab === 'overview' && (
+                <div>
 
-                <h5 className="text-lg font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">
-                  Account Analysis
-                </h5>
-                <p className="text-sm mb-3 text-gray-600 dark:text-gray-400">
-                  Dive into a detailed analysis of your account investments.
-                  Click the buttons below to begin.
-                </p>
-                <div className="flex gap-3">
-                  <a
-                    href="/Transfer"
-                    className="btn btn-outline-primary px-4 py-2 rounded-lg border text-blue-600 border-blue-600 hover:bg-blue-50"
-                  >
-                    Transfer
-                  </a>
-                  <a
-                    href="/assets-chart"
-                    className="btn btn-outline-primary px-4 py-2 rounded-lg border text-blue-600 border-blue-600 hover:bg-blue-50"
-                  >
-                    View Analysis
-                  </a>
+                  {loading ? (
+                    <p className="text-gray-500 dark:text-gray-400">Loading...</p>
+                  ) : (
+                    <>
+                      <h5 className="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">
+                        Account Information
+                      </h5>
+                      <div className="space-y-3 text-sm">
+                        <div className="flex">
+                          <span className="w-40 font-medium">Account Name:</span>
+                          <span>{user?.name}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Account Number:</span>
+                          <span>{user?._id}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Account Type:</span>
+                          <span>Single Brokerage</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Investment Plan:</span>
+                          <span>Starter</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Status:</span>
+                          <span>{user?.status}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Address:</span>
+                          <span>{user?.address}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Phone:</span>
+                          <span>
+                            {user?.countryCode} {user?.phoneNumber}
+                          </span>
+                        </div>
+                        <div className="flex">
+                          <span className="w-40 font-medium">Email:</span>
+                          <span>{user?.email}</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
-              </>
-            )}
+              )}
+              {activeTab === 'preferences' && (
+                <div className="pt-3">
+                  {/* Preferences form content */}
+                  <form>
+                    <div className="mb-4">
+                      <label className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                        Email Notifications
+                      </label>
+                      <div className="space-y-2">
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" className="form-checkbox" defaultChecked />
+                          <span>Changes made to your account</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" className="form-checkbox" defaultChecked />
+                          <span>Information on new products and services</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" className="form-checkbox" />
+                          <span>Marketing and promo offers</span>
+                        </label>
+                        <label className="flex items-center space-x-2">
+                          <input type="checkbox" className="form-checkbox" defaultChecked disabled />
+                          <span>Security alerts</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <button
+                        type="submit"
+                        className="btn btn-primary px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                      >
+                        Save Changes
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+            </div>
+
+            <h5 className="text-lg font-semibold mt-6 mb-3 text-gray-800 dark:text-gray-200">
+              Account Analysis
+            </h5>
+            <p className="text-sm mb-3 text-gray-600 dark:text-gray-400">
+              Dive into a detailed analysis of your account investments.
+              Click the buttons below to begin.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="/Transfer"
+                className="btn btn-outline-primary px-4 py-2 rounded-lg border text-blue-600 border-blue-600 hover:bg-blue-50"
+              >
+                Transfer
+              </a>
+              <a
+                href="/assets-chart"
+                className="btn btn-outline-primary px-4 py-2 rounded-lg border text-blue-600 border-blue-600 hover:bg-blue-50"
+              >
+                View Analysis
+              </a>
+            </div>
           </div>
         </div>
       </section>

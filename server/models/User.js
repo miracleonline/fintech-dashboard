@@ -42,6 +42,7 @@ const userSchema = new mongoose.Schema(
     address: {
       type: String,
       trim: true,
+      default: 'No address updated'
     },
     accountType: {
       type: String,
@@ -59,6 +60,8 @@ const userSchema = new mongoose.Schema(
     status : {
       type: String,
       trim: true,
+      enum: ['Active', 'Inactive', 'Suspended'], 
+      default: 'Active'
     }
   },
   { timestamps: true }
