@@ -10,7 +10,9 @@ export const requireAuth = async (req, res, next) => {
 
   try {
     const payload = jwt.verify(token, config.jwt.secret, { algorithms: ['HS256'] });
-    const user = await User.findById(payload.sub).select('_id name email role balanceCents');
+    const user = await User.findById(payload.sub).select(
+      '_id name email role balanceCents countryCode contactNumber accountType secondaryEmail referral'
+    );
     if (!user) return next(new ApiError(401, 'User no longer exists'));
     req.user = user;
     next();

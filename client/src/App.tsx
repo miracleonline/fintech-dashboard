@@ -5,6 +5,7 @@ import Dashboard from "./pages/Auth/Dashboard";
 import Login from "./pages/Auth/Login";
 import Layout from "./components/Layout";
 import AccountHistory from "./pages/Auth/AccountHistory";
+import Account from "./pages/Auth/Account";
 
 function App() {
   return (
@@ -27,6 +28,14 @@ function App() {
           element={
             <Layout>
               <AccountHistory />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Account"
+          element={
+            <Layout>
+              <Account />
             </Layout>
           }
         />

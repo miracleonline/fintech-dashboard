@@ -199,7 +199,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
         <li className="px-2 mt-4 text-xs uppercase text-gray-500 dark:text-gray-400">
           Quick Links
         </li>
-        {navItem("/account-profile", "bi-person", "Account Information")}
+        {navItem("/account", "bi-person", "Account Information")}
         {navItem("/refer", "bi-bag-check", "Referrals & Reward")}
         {navItem("/live-chat", "bi-chat-dots", "Live Chat")}
         {navItem("/about", "bi-info-square", "About Us")}
