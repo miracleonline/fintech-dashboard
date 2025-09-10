@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
 import ThemeToggle from "../../components/ThemeToggle";
 import ReportsChart from "../../components/charts/ReportsChart";
+import TransactionTable from "../../components/TransactionTable"; 
 import { BsPieChart, BsWallet2, BsCashStack, BsPeople } from "react-icons/bs";
 import {
   PieChart,
@@ -288,34 +289,8 @@ export default function Dashboard() {
         </div>
 
         {/* Transaction History */}
-        <div className="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 rounded-xl p-5 shadow mt-8">
-          <h5 className="mb-4 font-semibold text-gray-800 dark:text-gray-200">
-            Transaction History
-          </h5>
-          <table className="w-full text-sm text-left border-collapse">
-            <thead>
-              <tr className="border-b border-gray-200 dark:border-gray-700">
-                <th className="py-2 px-3">#</th>
-                <th className="py-2 px-3">Date</th>
-                <th className="py-2 px-3">Amount</th>
-                <th className="py-2 px-3">Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border-b border-gray-100 dark:border-gray-800">
-                <td className="py-2 px-3">1</td>
-                <td className="py-2 px-3">2025-09-01</td>
-                <td className="py-2 px-3">$250</td>
-                <td className="py-2 px-3 text-green-500">Completed</td>
-              </tr>
-              <tr>
-                <td className="py-2 px-3">2</td>
-                <td className="py-2 px-3">2025-08-29</td>
-                <td className="py-2 px-3">$150</td>
-                <td className="py-2 px-3 text-yellow-500">Pending</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="mt-8">
+          <TransactionTable />
         </div>
 
         {/* Footer */}
