@@ -33,18 +33,15 @@ const userSchema = new mongoose.Schema(
     },
     countryCode: {
       type: String,
-      default: '1',
-      required: true,  
+      default: '1',  
     },
     contactNumber: {
       type: String,
       trim: true,
-      required: true,
     },
     accountType: {
       type: String,
       trim: true,
-      required: true,
     },
     secondaryEmail: {
       type: String,

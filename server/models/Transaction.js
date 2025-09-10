@@ -19,6 +19,13 @@ const transactionSchema = new mongoose.Schema(
       required: true, 
       index: true 
     },
+    status: {
+      type: String,
+      enum: ['Completed', 'Pending', 'Failed'],
+      default: 'Pending',
+      required: true,
+      index: true
+    },
     description: { 
       type: String, 
       trim: true, 

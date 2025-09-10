@@ -88,6 +88,7 @@ export const listTransactions = catchAsync(async (req, res) => {
       id: t._id,
       type: t.type,
       amount: fromCents(t.amountCents),
+      status: t.status,
       description: t.description,
       occurredAt: t.occurredAt
     }))
