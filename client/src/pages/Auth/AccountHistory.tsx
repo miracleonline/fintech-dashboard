@@ -170,7 +170,7 @@ export default function AccountHistory() {
 
       {/* Transaction Table */}
       <section className="section">
-        <div className="card bg-white dark:bg-gray-900 shadow rounded-xl">
+        <div className="card bg-white text-gray-800 dark:text-gray-200 dark:bg-gray-900 shadow rounded-xl">
           <div className="card-body p-6">
             <h5 className="card-title text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
               Transaction history <span className="text-sm">| This month</span>

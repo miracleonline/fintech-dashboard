@@ -53,7 +53,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
         to={to}
         className={cn(
           "flex items-center p-2 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-800",
-          location.pathname === to ? "bg-gray-100 dark:bg-gray-900 font-semibold" : ""
+          location.pathname === to ? "bg-gray-100 dark:bg-gray-800 font-semibold" : ""
         )}
       >
         <i className={`bi ${icon} me-2`}></i>
