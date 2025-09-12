@@ -65,12 +65,12 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar: () => voi
         {/* Profile */}
         <div className="flex items-center space-x-2 mr-4">
           <img
-            src="/assets/img/user.jpg"
+            src={`http://localhost:5000${user?.profileImage}`}
             alt="profile"
             className="h-8 w-8 rounded-full"
           />
           <span className="hidden md:block ml-4 text-gray-800 dark:text-white whitespace-nowrap">
-            {user?.full_name || "User"} 👋
+            {user?.name || "User"} 👋
           </span>
         </div>
       </div>

@@ -28,7 +28,8 @@ export const register = catchAsync(async (req, res) => {
       contactNumber: user.contactNumber,
       accountType: user.accountType,
       secondaryEmail: user.secondaryEmail || "",
-      referral: user.referral || ""
+      referral: user.referral || "",
+      profileImage: user.profileImage || ""
     }
   });
 });
@@ -55,7 +56,8 @@ export const login = catchAsync(async (req, res) => {
       contactNumber: user.contactNumber,
       accountType: user.accountType,
       secondaryEmail: user.secondaryEmail || "",
-      referral: user.referral || ""
+      referral: user.referral || "",
+      profileImage: user.profileImage || ""
     }
   });
 });
