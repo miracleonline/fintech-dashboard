@@ -6,6 +6,7 @@ import Login from "./pages/Auth/Login";
 import Layout from "./components/Layout";
 import AccountHistory from "./pages/Auth/AccountHistory";
 import Account from "./pages/Auth/Account";
+import UpdateAccount from "./pages/Auth/UpdateAccount";
 
 function App() {
   return (
@@ -32,10 +33,18 @@ function App() {
           }
         />
         <Route
-          path="/Account"
+          path="/account"
           element={
             <Layout>
               <Account />
+            </Layout>
+          }
+        />
+        <Route
+          path="/update"
+          element={
+            <Layout>
+              <UpdateAccount />
             </Layout>
           }
         />

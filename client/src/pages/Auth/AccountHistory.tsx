@@ -91,7 +91,7 @@ export default function AccountHistory() {
               <a href="/" className="text-blue-600 hover:underline">Home</a>
             </li>
             <li>/</li>
-            <li>History &amp; Status</li>
+            <li>Transaction History</li>
             <li>/</li>
             <li className="font-medium text-gray-900 dark:text-white">History</li>
           </ol>

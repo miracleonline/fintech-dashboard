@@ -55,10 +55,8 @@ export default function Account() {
               </a>
             </li>
             <li>/</li>
-            <li>Users</li>
-            <li>/</li>
             <li className="font-medium text-gray-900 dark:text-white">
-              Account
+              Account Information
             </li>
           </ol>
         </nav>

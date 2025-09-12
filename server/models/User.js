@@ -62,6 +62,35 @@ const userSchema = new mongoose.Schema(
       trim: true,
       enum: ['Active', 'Inactive', 'Suspended'], 
       default: 'Active'
+    },
+    wallet_address: { 
+      type: String, 
+      default: "" 
+    },
+    bank_name: { 
+      type: String, 
+      default: "" 
+    },
+    account_number: { 
+      type: String, 
+      default: "" 
+    },
+    city: { 
+      type: String, 
+      default: "" 
+    },
+    country: { 
+      type: String, 
+      default: "" 
+    },
+    zip_code: { 
+      type: String, 
+      trim: true, 
+      default: "" 
+    },
+    profileImage: { 
+      type: String, 
+      default: "" 
     }
   },
   { timestamps: true }
