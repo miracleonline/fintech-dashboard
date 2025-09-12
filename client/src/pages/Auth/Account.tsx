@@ -136,37 +136,37 @@ export default function Account() {
                         Account Information
                       </h5>
                       <div className="space-y-3 text-sm">
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Account Name:</span>
                           <span>{user?.name}</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Account Number:</span>
                           <span>{user?._id}</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Account Type:</span>
                           <span>Single Brokerage</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Investment Plan:</span>
                           <span>Starter</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Status:</span>
                           <span>{user?.status}</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Address:</span>
                           <span>{user?.address}</span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Phone:</span>
                           <span>
                             {user?.countryCode} {user?.phoneNumber}
                           </span>
                         </div>
-                        <div className="flex">
+                        <div className="flex text-gray-500 dark:text-gray-400">
                           <span className="w-40 font-medium">Email:</span>
                           <span>{user?.email}</span>
                         </div>
@@ -183,7 +183,7 @@ export default function Account() {
                       <label className="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">
                         Email Notifications
                       </label>
-                      <div className="space-y-2">
+                      <div className="space-y-2 text-gray-500 dark:text-gray-400">
                         <label className="flex items-center space-x-2">
                           <input type="checkbox" className="form-checkbox" defaultChecked />
                           <span>Changes made to your account</span>
@@ -239,6 +239,13 @@ export default function Account() {
           </div>
         </div>
       </section>
+      {/* Footer */}
+      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-8">
+        © {new Date().getFullYear()} Payday Investment Company. All Rights Reserved. Powered by{" "}
+        <a href="https://paydayfinancialservice.com/" className="text-blue-600 hover:underline">
+          Technology
+        </a>
+      </footer>
     </div>
   );
 }

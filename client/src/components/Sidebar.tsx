@@ -71,7 +71,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       <ul className="pt-5 space-y-1 px-3 text-sm text-brand dark:text-brand-light">
         {navItem("/dashboard", "bi-grid", "Dashboard")}
 
-        {/* Investment Overview */}
+        {/* Investment Overview 
         <li>
           <button
             onClick={() => toggleMenu("investment")}
@@ -95,8 +95,8 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
             </ul>
           )}
         </li>
-
-        {/* Insurance Overview */}
+        */}
+        {/* Insurance Overview 
         <li>
           <button
             onClick={() => toggleMenu("insurance")}
@@ -120,7 +120,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
             </ul>
           )}
         </li>
-
+        */}
         {/* Transaction History */}
         <li>
           <button
