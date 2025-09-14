@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import AccountHistory from "./pages/Auth/AccountHistory";
 import Account from "./pages/Auth/Account";
 import UpdateAccount from "./pages/Auth/UpdateAccount";
+import PlansPage from "./pages/Auth/PlansPage";
 
 function App() {
   return (
@@ -45,6 +46,14 @@ function App() {
           element={
             <Layout>
               <UpdateAccount />
+            </Layout>
+          }
+        />
+        <Route
+          path="/upgrade"
+          element={
+            <Layout>
+              <PlansPage />
             </Layout>
           }
         />

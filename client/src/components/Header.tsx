@@ -21,7 +21,7 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar: () => voi
 
         {/* Logo + Site Name */}
         <a href="/" className="flex items-center space-x-2">
-          <img src="/assets/img/pinnlogo.jpg" alt="logo" className="h-8 w-8" />
+          <img src="/src/assets/images/fintech.jpg" alt="logo" className="h-8 w-8" />
           <span className="hidden lg:block font-bold text-gray-800 dark:text-white text-lg">
             Pinnacles
           </span>
