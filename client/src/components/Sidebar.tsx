@@ -163,10 +163,10 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
           </button>
           {openMenu === "settings" && (
             <ul className="ml-6 mt-1 space-y-1">
-              {navItem("/settings", "bi-circle", "Settings & Preferences")}
               {navItem("/update", "bi-circle", "Update Account Info")}
-              {navItem("/upgrade", "bi-circle", "Upgrade Investment Plan")}
-              {navItem("/beneficiaries", "bi-circle", "Account Beneficiaries")}
+              {navItem("/upgrade", "bi-circle", "Upgrade Account Plan")}
+              {navItem("/settings", "bi-circle", "Settings & Preferences")}
+              {navItem("/beneficiaries", "bi-circle", "Signatories & Beneficiaries")}
             </ul>
           )}
         </li>

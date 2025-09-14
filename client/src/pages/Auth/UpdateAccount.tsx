@@ -185,7 +185,7 @@ export default function UpdateAccount() {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">Wallet Address</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Wallet Address</label>
                 <input
                   type="text"
                   name="wallet_address"
@@ -197,7 +197,7 @@ export default function UpdateAccount() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Bank Name</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Bank Name</label>
                 <input
                   type="text"
                   name="bank_name"
@@ -209,7 +209,7 @@ export default function UpdateAccount() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Account Number</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Account Number</label>
                 <input
                   type="text"
                   name="account_number"
@@ -221,7 +221,7 @@ export default function UpdateAccount() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Address</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Address</label>
                 <textarea
                   name="address"
                   value={form.address}
@@ -233,7 +233,7 @@ export default function UpdateAccount() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-1">City</label>
+                  <label className="block text-sm font-medium mb-1 dark:text-gray-300">City</label>
                   <input
                     type="text"
                     name="city"
@@ -244,7 +244,7 @@ export default function UpdateAccount() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Country</label>
+                  <label className="block text-sm font-medium mb-1 dark:text-gray-300">Country</label>
                   <select
                     name="country"
                     value={form.country}
@@ -261,7 +261,7 @@ export default function UpdateAccount() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Zip Code</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Zip Code</label>
                 <input
                   type="text"
                   name="zip_code"
@@ -273,7 +273,7 @@ export default function UpdateAccount() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">Profile Image</label>
+                <label className="block text-sm font-medium mb-1 dark:text-gray-300">Profile Image</label>
                 <input
                   type="file"
                   accept="image/*"

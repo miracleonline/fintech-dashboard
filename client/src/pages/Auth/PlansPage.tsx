@@ -44,7 +44,7 @@ export default function PlansPage() {
       {/* Page Title */}
       <div className="pagetitle mb-4">
         <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-          Investment Plans
+          Account Plans
         </h1>
         <nav className="text-sm text-gray-600 dark:text-gray-400 mt-1">
           <ol className="breadcrumb flex space-x-2">
@@ -57,7 +57,7 @@ export default function PlansPage() {
             <li>Account Settings</li>
             <li>/</li>
             <li className="font-medium text-gray-900 dark:text-white">
-              Plans
+              Upgrade Plan
             </li>
           </ol>
         </nav>
