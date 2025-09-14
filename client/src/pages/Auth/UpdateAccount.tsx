@@ -146,7 +146,7 @@ export default function UpdateAccount() {
     <div>
       {/* Page Title */}
       <div className="pagetitle mb-4">
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Account Settings</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Account Update</h1>
         <nav className="text-sm text-gray-600 dark:text-gray-400 mt-1">
           <ol className="breadcrumb flex space-x-2">
             <li>
@@ -176,7 +176,7 @@ export default function UpdateAccount() {
                   onClick={() => setIsEditing(true)}
                   className="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
                 >
-                  Edit
+                  Update
                 </button>
               )}
             </div>

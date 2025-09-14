@@ -8,6 +8,7 @@ import AccountHistory from "./pages/Auth/AccountHistory";
 import Account from "./pages/Auth/Account";
 import UpdateAccount from "./pages/Auth/UpdateAccount";
 import PlansPage from "./pages/Auth/PlansPage";
+import BeneficiariesPage from "./pages/Auth/BeneficiariesPage";
 
 function App() {
   return (
@@ -54,6 +55,14 @@ function App() {
           element={
             <Layout>
               <PlansPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/beneficiaries"
+          element={
+            <Layout>
+              <BeneficiariesPage />
             </Layout>
           }
         />
