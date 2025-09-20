@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Modal from "../../components/Modal"; // adjust import path if needed
+import Modal from "../../components/Modal";
 
 interface Beneficiary {
   _id: string; // MongoDB id

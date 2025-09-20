@@ -9,6 +9,7 @@ import Account from "./pages/Auth/Account";
 import UpdateAccount from "./pages/Auth/UpdateAccount";
 import PlansPage from "./pages/Auth/PlansPage";
 import BeneficiariesPage from "./pages/Auth/BeneficiariesPage";
+import SettingsPage from "./pages/Auth/SettingsPage";
 
 function App() {
   return (
@@ -63,6 +64,14 @@ function App() {
           element={
             <Layout>
               <BeneficiariesPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <Layout>
+              <SettingsPage />
             </Layout>
           }
         />

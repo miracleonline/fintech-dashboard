@@ -19,6 +19,7 @@ import authRoutes from './routes/authRoutes.js';
 import accountRoutes from './routes/accountRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import beneficiaryRoutes from './routes/beneficiaryRoutes.js';
+import settingsRoutes from './routes/settingsRoutes.js';
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/account', accountRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/beneficiaries', beneficiaryRoutes);
+app.use('/api/settings', settingsRoutes);
 
 // 404 & error
 app.use(notFound);
