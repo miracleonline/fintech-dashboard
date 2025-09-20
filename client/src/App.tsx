@@ -10,6 +10,9 @@ import UpdateAccount from "./pages/Auth/UpdateAccount";
 import PlansPage from "./pages/Auth/PlansPage";
 import BeneficiariesPage from "./pages/Auth/BeneficiariesPage";
 import SettingsPage from "./pages/Auth/SettingsPage";
+import ETFChartsPage from "./pages/Auth/ETFChartsPage";
+import CryptoChartsPage from "./pages/Auth/CryptoChartsPage";
+import FractionalChartsPage from "./pages/Auth/FractionalChartsPage";
 
 function App() {
   return (
@@ -72,6 +75,30 @@ function App() {
           element={
             <Layout>
               <SettingsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/charts/etf"
+          element={
+            <Layout>
+              <ETFChartsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/charts/crypto"
+          element={
+            <Layout>
+              <CryptoChartsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/charts/fractional"
+          element={
+            <Layout>
+              <FractionalChartsPage />
             </Layout>
           }
         />
