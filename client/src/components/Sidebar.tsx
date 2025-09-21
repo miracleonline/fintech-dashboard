@@ -31,7 +31,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       setOpenMenu("transactions");
     } else if (
       location.pathname.startsWith("/history") ||
-      location.pathname.startsWith("/status") ||
+      location.pathname.startsWith("/cards") ||
       location.pathname.startsWith("/loan") ||
       location.pathname.startsWith("/statement")
     ) {
@@ -173,7 +173,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
               {navItem("/history", "bi-circle", "Transaction History")}
               {navItem("/statement", "bi-circle", "Account Statement")}
               {navItem("/loan", "bi-circle", "Pinnacles Loans & Credit")}
-              {navItem("/status", "bi-circle", "Pinnacles Cards & Wallet")}
+              {navItem("/cards", "bi-circle", "Pinnacles Cards & Wallet")}
             </ul>
           )}
         </li>

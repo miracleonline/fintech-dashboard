@@ -41,8 +41,7 @@ export const getLoanById = catchAsync(async (req, res) => {
   res.json({ success: true, loan });
 });
 
-// Update loan status (for admin - optional enhancement)
-// This would usually be protected by an admin middleware
+// Update loan status (for admin)
 export const updateLoanStatus = catchAsync(async (req, res) => {
   const { id } = req.params;
   const { status, decisionNotes } = req.body;
