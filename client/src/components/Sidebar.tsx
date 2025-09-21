@@ -32,7 +32,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     } else if (
       location.pathname.startsWith("/history") ||
       location.pathname.startsWith("/status") ||
-      location.pathname.startsWith("/logs") ||
+      location.pathname.startsWith("/loan") ||
       location.pathname.startsWith("/statement")
     ) {
       setOpenMenu("overview");
@@ -172,7 +172,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
             <ul className="ml-6 mt-1 space-y-1">
               {navItem("/history", "bi-circle", "Transaction History")}
               {navItem("/statement", "bi-circle", "Account Statement")}
-              {navItem("/logs", "bi-circle", "Pinnacles Loans & Credit")}
+              {navItem("/loan", "bi-circle", "Pinnacles Loans & Credit")}
               {navItem("/status", "bi-circle", "Pinnacles Cards & Wallet")}
             </ul>
           )}

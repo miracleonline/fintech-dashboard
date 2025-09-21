@@ -20,6 +20,7 @@ import accountRoutes from './routes/accountRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import beneficiaryRoutes from './routes/beneficiaryRoutes.js';
 import settingsRoutes from './routes/settingsRoutes.js';
+import loansRoutes from './routes/loansRoutes.js';
 
 const app = express();
 
@@ -62,6 +63,7 @@ app.use('/api/account', accountRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/beneficiaries', beneficiaryRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/loans', loansRoutes);
 
 // 404 & error
 app.use(notFound);

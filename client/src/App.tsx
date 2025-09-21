@@ -19,6 +19,7 @@ import AboutUsPage from "./pages/Auth/AboutUsPage";
 import TermsPage from "./pages/Auth/TermsPage";
 import FaqPage from "./pages/Auth/FaqPage";
 import AccountStatementPage from "./pages/Auth/AccountStatement";
+import LoanApplication from "./pages/Auth/LoanApplication";
 
 function App() {
   return (
@@ -153,6 +154,14 @@ function App() {
           element={
             <Layout>
               <AccountStatementPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/loan"
+          element={
+            <Layout>
+              <LoanApplication />
             </Layout>
           }
         />
