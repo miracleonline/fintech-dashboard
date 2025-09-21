@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import Modal from "../../components/Modal";
 import Sidebar from "../../components/Sidebar";
 import StatCard from "../../components/StatCard";
 import ThemeToggle from "../../components/ThemeToggle";
 import ReportsChart from "../../components/charts/ReportsChart";
 import TransactionTable from "../../components/TransactionTable"; 
+import TransactionFormModal from "../../components/TransactionFormModal"; 
 import { BsPieChart, BsWallet2, BsCashStack, BsPeople } from "react-icons/bs";
 import {
   PieChart,
@@ -21,11 +23,41 @@ import {
 export default function Dashboard() {
   const [user, setUser] = useState<any>(null);
   const [profileProgress] = useState(70);
+  const [showModal, setShowModal] = useState<null | "credit" | "debit">(null);
+  const [messageModal, setMessageModal] = useState<{
+    title: string;
+    message: string;
+    confirmText?: string;
+  } | null>(null);
+
+  const fetchUser = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/me", {
+        headers: {
+          "Authorization": `Bearer ${localStorage.getItem("token")}`,
+          "Content-Type": "application/json"
+        }
+      });
+
+      if (!res.ok) throw new Error("Failed to fetch user");
+
+      const data = await res.json();
+      setUser({
+        ...data.user,
+        balance: (data.user.balanceCents / 100).toFixed(2), 
+      });
+
+
+      localStorage.setItem("user", JSON.stringify(data.user));
+    } catch (err) {
+      console.error("Failed to fetch /me:", err);
+    }
+  };
 
   useEffect(() => {
-    const u = localStorage.getItem("user");
-    if (u) setUser(JSON.parse(u));
+    fetchUser();
   }, []);
+
 
   const assetsData = [
     { name: "Bonds", value: 1048 },
@@ -86,7 +118,7 @@ export default function Dashboard() {
               icon={<i className="bi bi-coin text-xl" />}
               action={
                 <button
-                  onClick={() => alert("Add Funds clicked!")}
+                  onClick={() => setShowModal("credit")}
                   className="px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition text-sm"
                 >
                   Add Funds
@@ -102,7 +134,7 @@ export default function Dashboard() {
               icon={<i className="bi bi-database-gear text-xl" />}
               action={
                 <button
-                  onClick={() => alert("Withdraw clicked!")}
+                  onClick={() => setShowModal("debit")}
                   className="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition text-sm"
                 >
                   Withdraw
@@ -297,6 +329,31 @@ export default function Dashboard() {
         <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
           © {new Date().getFullYear()} Fintech Dashboard. All rights reserved.
         </footer>
+
+        {showModal && (
+        <TransactionFormModal
+          type={showModal}
+          onClose={() => setShowModal(null)}
+          onSuccess={() => {
+          fetchUser(); 
+          setShowModal(null);
+          setMessageModal({
+            title: "Transaction Successful",
+            message: `Your ${showModal === "credit" ? "deposit" : "withdrawal"} was successful.`,
+          });
+          }}
+        />
+      )}
+
+      {messageModal && (
+        <Modal
+          open={true}
+          title={messageModal.title}
+          message={messageModal.message}
+          confirmText={messageModal.confirmText || "OK"}
+          onClose={() => setMessageModal(null)}
+        />
+      )}
     </>
   );
 }
