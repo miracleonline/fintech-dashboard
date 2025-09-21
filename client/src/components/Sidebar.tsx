@@ -23,12 +23,19 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     ) {
       setOpenMenu("insurance");
     } else if (
+      location.pathname.startsWith("/historyx") ||
+      location.pathname.startsWith("/statusx") ||
+      location.pathname.startsWith("/logsx") ||
+      location.pathname.startsWith("/statementx")
+    ) {
+      setOpenMenu("transactions");
+    } else if (
       location.pathname.startsWith("/history") ||
       location.pathname.startsWith("/status") ||
       location.pathname.startsWith("/logs") ||
       location.pathname.startsWith("/statement")
     ) {
-      setOpenMenu("transactions");
+      setOpenMenu("overview");
     } else if (
       location.pathname.startsWith("/settings") ||
       location.pathname.startsWith("/update") ||
@@ -121,7 +128,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
           )}
         </li>
         */}
-        {/* Transaction History */}
+        {/* Transaction History 
         <li>
           <button
             onClick={() => toggleMenu("transactions")}
@@ -138,14 +145,38 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
           </button>
           {openMenu === "transactions" && (
             <ul className="ml-6 mt-1 space-y-1">
-              {navItem("/history", "bi-circle", "History")}
-              {navItem("/status", "bi-circle", "Check Status")}
-              {navItem("/statement", "bi-circle", "Account Statement")}
-              {navItem("/logs", "bi-circle", "Log transaction dispute")}
+              {navItem("/historyx", "bi-circle", "History")}
+              {navItem("/statusx", "bi-circle", "Check Status")}
+              {navItem("/statementx", "bi-circle", "Account Statement")}
+              {navItem("/logsx", "bi-circle", "Log transaction dispute")}
             </ul>
           )}
         </li>
-
+        */}
+        {/* Financial Overview */}
+        <li>
+          <button
+            onClick={() => toggleMenu("overview")}
+            className="flex items-center w-full p-2 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-800"
+          >
+            <i className="bi bi-file-text me-2"></i>
+            <span>Financial Overview</span>
+            <i
+              className={cn(
+                "bi bi-chevron-down ms-auto transition-transform duration-700",
+                openMenu === "overview" ? "rotate-180" : ""
+              )}
+            />
+          </button>
+          {openMenu === "overview" && (
+            <ul className="ml-6 mt-1 space-y-1">
+              {navItem("/history", "bi-circle", "Transaction History")}
+              {navItem("/statement", "bi-circle", "Account Statement")}
+              {navItem("/logs", "bi-circle", "Pinnacles Loans & Credit")}
+              {navItem("/status", "bi-circle", "Pinnacles Cards & Wallet")}
+            </ul>
+          )}
+        </li>
         {/* Account Settings */}
         <li>
           <button

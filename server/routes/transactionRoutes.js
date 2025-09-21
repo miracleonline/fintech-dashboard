@@ -8,6 +8,7 @@ import {
   updateTransaction,
   deleteTransaction
 } from '../controllers/transactionController.js';
+import { downloadStatement } from '../controllers/statementController.js';
 
 const router = Router();
 
@@ -43,5 +44,8 @@ router.patch(
 
 // DELETE /api/transactions/:id
 router.delete('/:id', validate([param('id').isMongoId()]), deleteTransaction);
+
+// GET /api/transactions/download 
+router.get('/download', downloadStatement);
 
 export default router;

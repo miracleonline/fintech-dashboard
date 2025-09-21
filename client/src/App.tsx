@@ -13,6 +13,12 @@ import SettingsPage from "./pages/Auth/SettingsPage";
 import ETFChartsPage from "./pages/Auth/ETFChartsPage";
 import CryptoChartsPage from "./pages/Auth/CryptoChartsPage";
 import FractionalChartsPage from "./pages/Auth/FractionalChartsPage";
+import ReferralsPage from "./pages/Auth/ReferralsPage";
+import LiveChatPage from "./pages/Auth/LiveChatPage";
+import AboutUsPage from "./pages/Auth/AboutUsPage";
+import TermsPage from "./pages/Auth/TermsPage";
+import FaqPage from "./pages/Auth/FaqPage";
+import AccountStatementPage from "./pages/Auth/AccountStatement";
 
 function App() {
   return (
@@ -99,6 +105,54 @@ function App() {
           element={
             <Layout>
               <FractionalChartsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/refer"
+          element={
+            <Layout>
+              <ReferralsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/live-chat"
+          element={
+            <Layout>
+              <LiveChatPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <AboutUsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/terms"
+          element={
+            <Layout>
+              <TermsPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/faq"
+          element={
+            <Layout>
+              <FaqPage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/statement"
+          element={
+            <Layout>
+              <AccountStatementPage />
             </Layout>
           }
         />
