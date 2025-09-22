@@ -192,33 +192,41 @@ export default function AccountHistory() {
                     </tr>
                   </thead>
                   <tbody>
-                    {transactions.map((t) => (
-                      <tr key={t.id} className="border-b border-gray-100 dark:border-gray-800">
-                        <td className="py-2 px-3">#{t.id}</td>
-                        <td className="py-2 px-3 capitalize">{t.type}</td>
-                        <td className="py-2 px-3">{new Date(t.occurredAt).toLocaleDateString()}</td>
-                        <td className="py-2 px-3">${t.amount}</td>
-                        <td
-                          className={`py-2 px-3 font-medium ${
-                            t.status === "Completed"
-                              ? "text-green-500"
-                              : t.status === "Pending"
-                              ? "text-yellow-500"
-                              : "text-red-500"
-                          }`}
-                        >
-                          {t.status}
+                    {transactions.length > 0 ? (
+                      transactions.map((t) => (
+                        <tr key={t.id} className="border-b border-gray-100 dark:border-gray-800">
+                          <td className="py-2 px-3">#{t.id}</td>
+                          <td className="py-2 px-3 capitalize">{t.type}</td>
+                          <td className="py-2 px-3">{new Date(t.occurredAt).toLocaleDateString()}</td>
+                          <td className="py-2 px-3">${t.amount}</td>
+                          <td
+                            className={`py-2 px-3 font-medium ${
+                              t.status === "Completed"
+                                ? "text-green-500"
+                                : t.status === "Pending"
+                                ? "text-yellow-500"
+                                : "text-red-500"
+                            }`}
+                          >
+                            {t.status}
+                          </td>
+                          <td className="py-2 px-3">{t.description || "-"}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan={6} className="py-4 px-3 text-center text-gray-500 dark:text-gray-400">
+                          No transactions found.
                         </td>
-                        <td className="py-2 px-3">{t.description || "-"}</td>
                       </tr>
-                    ))}
+                    )}
                   </tbody>
                 </table>
               </div>
             )}
 
             {/* Pagination */}
-            {meta && (
+            {meta && transactions.length > 0 && (
               <div className="flex items-center justify-between mt-4 text-sm text-gray-600 dark:text-gray-400">
                 <div>
                   Showing {(page - 1) * limit + 1} to{" "}
@@ -262,14 +270,6 @@ export default function AccountHistory() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-8">
-        © {new Date().getFullYear()} Payday Investment Company. All Rights Reserved. Powered by{" "}
-        <a href="https://paydayfinancialservice.com/" className="text-blue-600 hover:underline">
-          Technology
-        </a>
-      </footer>
     </div>
   );
 }

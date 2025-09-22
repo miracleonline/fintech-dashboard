@@ -107,8 +107,6 @@ export default function ETFChartsPage() {
     }
   };
 
-  // You can similarly define options/series for bar, pie, donut, radar, etc.
-
   return (
     <main className="main">
       {/* Page Title */}
@@ -130,14 +128,14 @@ export default function ETFChartsPage() {
         </nav>
       </div>
 
-      <p>ETF market charts. You can check the <a href="#">Payday blog</a> for detailed price analysis.</p>
+      <p className="dark:text-white">ETF market charts. You can check the <a href="#" className="text-blue-600 underline">Payday blog</a> for detailed price analysis.</p>
 
       <section className="section">
         <div className="row">
           <div className="col-lg-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">iShares Bitcoin Trust (IBIT) Chart</h5>
+                <h5 className="card-title dark:text-white">iShares Bitcoin Trust (IBIT) Chart</h5>
                 <Chart
                   options={lineOptions}
                   series={[{ name: "IBIT", data: lineSeries }]}
@@ -151,7 +149,7 @@ export default function ETFChartsPage() {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">VanEck Ethereum Strategy ETF (EFUT) Chart</h5>
+                <h5 className="card-title dark:text-white">VanEck Ethereum Strategy ETF (EFUT) Chart</h5>
                 <Chart
                   options={areaOptions}
                   series={areaSeries}
@@ -165,7 +163,7 @@ export default function ETFChartsPage() {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">Roundhill Bitcoin Covered Call Strategy ETF (YBTC) Chart</h5>
+                <h5 className="card-title dark:text-white">Roundhill Bitcoin Covered Call Strategy ETF (YBTC) Chart</h5>
                 <Chart
                   options={columnOptions}
                   series={columnSeries}
@@ -179,7 +177,7 @@ export default function ETFChartsPage() {
           <div className="col-lg-6">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title">ETF Sector Allocation</h5>
+                <h5 className="card-title dark:text-white">ETF Sector Allocation</h5>
                 <Chart
                   options={{
                     chart: { type: "donut" },

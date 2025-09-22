@@ -205,7 +205,7 @@ export default function TransactionTable() {
       )}
 
       {/* Pagination */}
-      {meta && (
+      {meta && transactions.length > 0 && (
         <div className="flex items-center justify-between mt-4 text-sm text-gray-600 dark:text-gray-400">
           <div>
             Showing {(page - 1) * limit + 1} to {Math.min(page * limit, meta.total)} of {meta.total} entries

@@ -272,7 +272,7 @@ export default function LoanApplication() {
         return (
           <div className="space-y-4">
             <h5 className="text-lg font-semibold text-gray-800 dark:text-gray-200">Review your application</h5>
-            <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg space-y-2">
+            <div className="bg-gray-100 dark:bg-gray-800 text-gray-200 p-4 rounded-lg space-y-2">
               <p><span className="font-medium">Loan Amount:</span> {form.amount}</p>
               <p><span className="font-medium">Purpose:</span> {form.purpose}</p>
               <p><span className="font-medium">Repayment Period (months):</span> {form.repaymentPeriod}</p>
@@ -339,9 +339,9 @@ export default function LoanApplication() {
           {loans.length === 0 ? (
             <p className="text-gray-500 dark:text-gray-300">No loan applications found.</p>
           ) : (
-            <table className="min-w-full text-left border">
+            <table className="min-w-full text-left">
               <thead>
-                <tr className="bg-gray-100 dark:bg-gray-800">
+                <tr className="bg-gray-100 dark:bg-gray-100">
                   <th className="p-2">Amount</th>
                   <th className="p-2">Purpose</th>
                   <th className="p-2">Repayment</th>
@@ -425,16 +425,6 @@ export default function LoanApplication() {
           </div>
         </section>
       )}
-
-      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-8">
-        © {new Date().getFullYear()} Payday Investment Company. All Rights Reserved. Powered by{" "}
-        <a
-          href="https://paydayfinancialservice.com/"
-          className="text-blue-600 hover:underline"
-        >
-          Technology
-        </a>
-      </footer>
 
       {/* Modal for success/error */}
       <Modal

@@ -173,7 +173,7 @@ export default function BeneficiariesPage() {
           {beneficiaries.length === 0 ? (
             <p className="text-gray-500">No beneficiaries added yet.</p>
           ) : (
-            <table className="min-w-full text-left border">
+            <table className="min-w-full text-left">
               <thead>
                 <tr className="bg-gray-100">
                   <th className="p-2">Full Name</th>
@@ -196,10 +196,16 @@ export default function BeneficiariesPage() {
                     <td className="p-2 dark:text-white">{b.bankName}</td>
                     <td className="p-2 dark:text-white">{b.accountNumber}</td>
                     <td className="p-2 space-x-2">
-                      <button className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+                      <button 
+                        className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                        onClick={() => handleEdit(b)}
+                      >
                         Edit
                       </button>
-                      <button className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700">
+                      <button 
+                        className="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700"
+                        onClick={() => handleDelete(b._id)}
+                      >
                         Delete
                       </button>
                     </td>
@@ -268,15 +274,7 @@ export default function BeneficiariesPage() {
           </form>
         </div>
       )}
-
-      {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-8">
-        © {new Date().getFullYear()} Payday Investment Company. All Rights Reserved. Powered by{" "}
-        <a href="https://paydayfinancialservice.com/" className="text-blue-600 hover:underline">
-          Technology
-        </a>
-      </footer>
-
+      
       {/* Success Modal */}
       <Modal
         open={modalOpen}

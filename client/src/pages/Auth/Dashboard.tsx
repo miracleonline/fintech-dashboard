@@ -325,11 +325,6 @@ export default function Dashboard() {
           <TransactionTable />
         </div>
 
-        {/* Footer */}
-        <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4">
-          © {new Date().getFullYear()} Fintech Dashboard. All rights reserved.
-        </footer>
-
         {showModal && (
         <TransactionFormModal
           type={showModal}

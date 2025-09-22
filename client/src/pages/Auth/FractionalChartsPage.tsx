@@ -55,7 +55,7 @@ export default function FractionalChartsPage() {
           {/* Area Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Fractional Price Trend</h5>
+              <h5 className="card-title dark:text-white">Fractional Price Trend</h5>
               <Chart options={areaOptions} series={areaSeries} type="area" height={350} />
             </div></div>
           </div>
@@ -63,7 +63,7 @@ export default function FractionalChartsPage() {
           {/* Donut Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">User Portfolio Allocation</h5>
+              <h5 className="card-title dark:text-white">User Portfolio Allocation</h5>
               <Chart options={donutOptions} series={donutSeries} type="donut" height={350} />
             </div></div>
           </div>
@@ -71,7 +71,7 @@ export default function FractionalChartsPage() {
           {/* Bar Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Ownership Percentages</h5>
+              <h5 className="card-title dark:text-white">Ownership Percentages</h5>
               <Chart options={columnOptions} series={columnSeries} type="bar" height={350} />
             </div></div>
           </div>
@@ -79,7 +79,7 @@ export default function FractionalChartsPage() {
           {/* Radar Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Fractional Comparison</h5>
+              <h5 className="card-title dark:text-white">Fractional Comparison</h5>
               <Chart options={radarOptions} series={radarSeries} type="radar" height={350} />
             </div></div>
           </div>

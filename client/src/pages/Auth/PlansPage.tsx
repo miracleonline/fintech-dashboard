@@ -117,14 +117,6 @@ export default function PlansPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="text-center text-sm text-gray-500 dark:text-gray-400 py-4 mt-8">
-        © {new Date().getFullYear()} Payday Investment Company. All Rights Reserved. Powered by{" "}
-        <a href="https://paydayfinancialservice.com/" className="text-blue-600 hover:underline">
-          Technology
-        </a>
-      </footer>
     </div>
   );
 }

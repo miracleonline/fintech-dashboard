@@ -142,7 +142,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Investment Preferences */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 space-y-4">
+      <div className="bg-white dark:bg-gray-900 dark:text-gray-300 shadow rounded-lg p-6 space-y-4">
         <h2 className="text-lg font-semibold">Investment Preferences</h2>
 
         <input
@@ -282,7 +282,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Asset Preferences */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 space-y-4">
+      <div className="bg-white dark:bg-gray-900 dark:text-gray-300 shadow rounded-lg p-6 space-y-4">
         <h2 className="text-lg font-semibold">Asset Preferences</h2>
 
         <div>
@@ -347,7 +347,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Signal Preferences */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 space-y-4">
+      <div className="bg-white dark:bg-gray-900 dark:text-gray-300 shadow rounded-lg p-6 space-y-4">
         <h2 className="text-lg font-semibold">Signal Preferences</h2>
 
         <label className="flex items-center space-x-2">
@@ -388,7 +388,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Notification Preferences */}
-      <div className="bg-white dark:bg-gray-900 shadow rounded-lg p-6 space-y-4">
+      <div className="bg-white dark:bg-gray-900 dark:text-gray-300 shadow rounded-lg p-6 space-y-4">
         <h2 className="text-lg font-semibold">Notification Preferences</h2>
 
         <label className="flex items-center space-x-2">

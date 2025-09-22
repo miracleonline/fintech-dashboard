@@ -52,7 +52,7 @@ export default function CryptoChartsPage() {
           {/* Pie Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Crypto Market Share</h5>
+              <h5 className="card-title dark:text-white">Crypto Market Share</h5>
               <Chart options={pieOptions} series={pieSeries} type="pie" height={350} />
             </div></div>
           </div>
@@ -60,7 +60,7 @@ export default function CryptoChartsPage() {
           {/* Bar Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Top Crypto Market Cap</h5>
+              <h5 className="card-title dark:text-white">Top Crypto Market Cap</h5>
               <Chart options={barOptions} series={barSeries} type="bar" height={350} />
             </div></div>
           </div>
@@ -68,7 +68,7 @@ export default function CryptoChartsPage() {
           {/* Radar Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">Crypto Feature Comparison</h5>
+              <h5 className="card-title dark:text-white">Crypto Feature Comparison</h5>
               <Chart options={radarOptions} series={radarSeries} type="radar" height={350} />
             </div></div>
           </div>
@@ -76,7 +76,7 @@ export default function CryptoChartsPage() {
           {/* Line Chart */}
           <div className="col-lg-6">
             <div className="card"><div className="card-body">
-              <h5 className="card-title">BTC Price (Last 5 Days)</h5>
+              <h5 className="card-title dark:text-white">BTC Price (Last 5 Days)</h5>
               <Chart options={lineOptions} series={lineSeries} type="line" height={350} />
             </div></div>
           </div>

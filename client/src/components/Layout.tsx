@@ -1,10 +1,47 @@
 // src/layouts/Layout.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import jwt_decode from "jwt-decode";
 import Sidebar from "./Sidebar";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/login"); 
+      return;
+    }
+
+    try {
+      const decoded: any = jwt_decode(token);
+
+      // Check expiry
+      const currentTime = Date.now() / 1000;
+      if (decoded.exp < currentTime) {
+        localStorage.removeItem("token");
+        navigate("/login");
+        return;
+      }
+
+      // ****Fetch user info here using /api/auth/me
+      setLoading(false);
+    } catch (err) {
+      console.error("Invalid token", err);
+      localStorage.removeItem("token");
+      navigate("/login");
+    }
+  }, [navigate]);
+
+  if (loading) {
+    return <div className="text-center py-10">Loading...</div>; // You can replace with spinner
+  }
 
   return (
     <div className="relative min-h-screen bg-gray-100 dark:bg-gray-950">
@@ -28,6 +65,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <main className="flex-1 pt-[100px] p-4">
           {children}
         </main>
+
+        {/* Footer */}
+        <Footer />
       </div>
     </div>
   );
