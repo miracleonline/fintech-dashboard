@@ -13,7 +13,7 @@ export default function AccountStatement() {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:5000/api/transactions/download?start=${startDate}&end=${endDate}&pages=${pages}`,
+        `https://fintech-dashboard-p1y7.onrender.com/api/transactions/download?start=${startDate}&end=${endDate}&pages=${pages}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

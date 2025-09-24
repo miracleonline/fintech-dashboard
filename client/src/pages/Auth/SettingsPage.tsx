@@ -51,7 +51,7 @@ export default function SettingsPage() {
     const token = localStorage.getItem("token");
 
     const handleSubmit = async () => {
-      const res = await fetch("http://localhost:5000/api/settings", {
+      const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/settings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +73,7 @@ export default function SettingsPage() {
     useEffect(() => {
       const fetchSettings = async () => {
         try {
-          const res = await fetch("http://localhost:5000/api/settings", {
+          const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/settings", {
             headers: {
               Authorization: `Bearer ${token}`,
             },

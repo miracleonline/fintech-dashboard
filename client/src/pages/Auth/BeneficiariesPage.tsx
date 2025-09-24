@@ -29,7 +29,7 @@ export default function BeneficiariesPage() {
 
   // Fetch beneficiaries
   useEffect(() => {
-    fetch("http://localhost:5000/api/beneficiaries", {
+    fetch("https://fintech-dashboard-p1y7.onrender.com/api/beneficiaries", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -46,8 +46,8 @@ export default function BeneficiariesPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const url = editId
-      ? `http://localhost:5000/api/beneficiaries/${editId}`
-      : "http://localhost:5000/api/beneficiaries";
+      ? `https://fintech-dashboard-p1y7.onrender.com/api/beneficiaries/${editId}`
+      : "https://fintech-dashboard-p1y7.onrender.com/api/beneficiaries";
     const method = editId ? "PATCH" : "POST";
 
     const res = await fetch(url, {
@@ -99,7 +99,7 @@ export default function BeneficiariesPage() {
   // Delete beneficiary
   const handleDelete = async (id: string) => {
     const res = await fetch(
-      `http://localhost:5000/api/beneficiaries/${id}`,
+      `https://fintech-dashboard-p1y7.onrender.com/api/beneficiaries/${id}`,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },

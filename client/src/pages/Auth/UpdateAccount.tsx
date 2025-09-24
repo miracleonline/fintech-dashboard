@@ -42,7 +42,7 @@ export default function UpdateAccount() {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:5000/api/account/info", {
+        const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/account/info", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -107,7 +107,7 @@ export default function UpdateAccount() {
       });
       if (file) formData.append("profile_image", file);
 
-      const res = await fetch("http://localhost:5000/api/account/update", {
+      const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/account/update", {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

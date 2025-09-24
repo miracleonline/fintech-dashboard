@@ -163,7 +163,7 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar: () => voi
         {/* User */}
         <div className="flex items-center space-x-2 mr-4">
           <img
-            src={`http://localhost:5000${user?.profileImage}`}
+            src={`https://fintech-dashboard-p1y7.onrender.com${user?.profileImage}`}
             alt="profile"
             className="h-8 w-8 rounded-full"
           />

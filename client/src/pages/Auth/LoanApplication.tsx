@@ -122,7 +122,7 @@ export default function LoanApplication() {
         collateral: form.collateral?.trim() || undefined,
       };
 
-      const res = await fetch("http://localhost:5000/api/loans", {
+      const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/loans", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +167,7 @@ export default function LoanApplication() {
   const fetchLoans = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch("http://localhost:5000/api/loans", {
+      const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/loans", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

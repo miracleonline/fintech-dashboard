@@ -24,7 +24,7 @@ export default function Account() {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:5000/api/auth/me", {
+        const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/auth/me", {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,

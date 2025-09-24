@@ -29,7 +29,7 @@ export default function Dashboard() {
 
   const fetchUser = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/me", {
+      const res = await fetch("https://fintech-dashboard-p1y7.onrender.com/api/auth/me", {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",

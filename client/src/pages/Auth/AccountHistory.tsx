@@ -47,7 +47,7 @@ export default function AccountHistory() {
 
         const token = localStorage.getItem("token");
 
-        const res = await fetch(`http://localhost:5000/api/transactions?${params.toString()}`, {
+        const res = await fetch(`https://fintech-dashboard-p1y7.onrender.com/api/transactions?${params.toString()}`, {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`, 
