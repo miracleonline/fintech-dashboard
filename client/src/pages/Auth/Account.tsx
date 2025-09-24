@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 interface AccountInfo {
-  id: string;
+  _id: string;
   name: string;
   email: string;
   status: string;

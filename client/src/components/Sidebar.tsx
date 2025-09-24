@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "../utils/cn"; // className helper
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Auto-open parent menu if route matches one of its children
   useEffect(() => {
@@ -58,6 +60,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     <li>
       <Link
         to={to}
+        onClick={onClose}
         className={cn(
           "flex items-center p-2 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-800",
           location.pathname === to ? "bg-gray-100 dark:bg-gray-800 font-semibold" : ""
@@ -68,6 +71,11 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
       </Link>
     </li>
   );
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  };
 
   return (
     <aside
@@ -236,7 +244,15 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
         {navItem("/about", "bi-info-square", "About Us")}
         {navItem("/faq", "bi-question-circle", "F.A.Q")}
         {navItem("/terms", "bi-file-earmark-code", "T.&.C")}
-        {navItem("/logout", "bi-box-arrow-right", "Log Out")}
+        <li>
+          <button
+            onClick={handleLogout}
+            className="flex items-center w-full p-2 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-800 text-left"
+          >
+            <i className="bi bi-box-arrow-right me-2"></i>
+            <span>Log Out</span>
+          </button>
+        </li>
       </ul>
     </aside>
   );

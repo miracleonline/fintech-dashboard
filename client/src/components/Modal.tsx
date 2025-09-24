@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 interface ModalProps {
   open: boolean;
   title: string;

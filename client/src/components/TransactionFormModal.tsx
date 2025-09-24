@@ -1,4 +1,3 @@
-// components/TransactionFormModal.tsx
 import { useState } from "react";
 
 interface Props {
@@ -8,7 +7,12 @@ interface Props {
   showMessage?: (title: string, message: string) => void;
 }
 
-export default function TransactionFormModal({ type, onClose, onSuccess }: Props) {
+export default function TransactionFormModal({
+  type,
+  onClose,
+  onSuccess,
+  showMessage,
+}: Props) {
   const [amount, setAmount] = useState("");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +30,7 @@ export default function TransactionFormModal({ type, onClose, onSuccess }: Props
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           type,
@@ -41,7 +45,10 @@ export default function TransactionFormModal({ type, onClose, onSuccess }: Props
 
       onSuccess?.();
       onClose();
-      showMessage?.("Transaction Successful", `Your ${type} of ₦${amount} was completed.`);
+      showMessage?.(
+        "Transaction Successful",
+        `Your ${type} of ₦${amount} was completed.`
+      );
     } catch (err: any) {
       setError(err.message || "An error occurred");
     } finally {
@@ -57,7 +64,9 @@ export default function TransactionFormModal({ type, onClose, onSuccess }: Props
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-sm text-gray-700 dark:text-gray-300">Amount (₦)</label>
+            <label className="block text-sm text-gray-700 dark:text-gray-300">
+              Amount (₦)
+            </label>
             <input
               type="number"
               step="0.01"
@@ -70,12 +79,18 @@ export default function TransactionFormModal({ type, onClose, onSuccess }: Props
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm text-gray-700 dark:text-gray-300">Description</label>
+            <label className="block text-sm text-gray-700 dark:text-gray-300">
+              Description
+            </label>
             <input
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder={type === "credit" ? "e.g. Add funds via bank" : "e.g. Withdraw to bank"}
+              placeholder={
+                type === "credit"
+                  ? "e.g. Add funds via bank"
+                  : "e.g. Withdraw to bank"
+              }
               className="w-full px-3 py-2 border rounded dark:bg-gray-800 dark:text-white"
             />
           </div>

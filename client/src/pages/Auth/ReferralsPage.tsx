@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ReferralsRewardsPage() {
   const [referralLink] = useState("https://miracle.com/referral?code=XYZ123");

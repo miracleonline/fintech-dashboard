@@ -1,5 +1,4 @@
 // src/pages/PlansPage.tsx
-import React from "react";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 const plans = [

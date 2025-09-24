@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import { cn } from "../utils/cn";
 
 interface StatCardProps {
@@ -7,8 +6,8 @@ interface StatCardProps {
   value: string;
   percentage?: string;
   percentageType?: "increase" | "decrease";
-  icon: ReactNode;
-  action?: ReactNode;
+  icon: React.ReactNode;
+  action?: React.ReactNode;
 }
 
 export default function StatCard({

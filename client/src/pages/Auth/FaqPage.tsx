@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const faqs = [
@@ -30,9 +30,9 @@ const faqs = [
 ];
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
@@ -40,11 +40,15 @@ export default function FAQPage() {
     <main className="main">
       {/* Page Title */}
       <div className="pagetitle mb-6">
-        <h1 className="text-3xl font-semibold text-gray-800 dark:text-white">Frequently Asked Questions</h1>
+        <h1 className="text-3xl font-semibold text-gray-800 dark:text-white">
+          Frequently Asked Questions
+        </h1>
         <nav className="text-sm text-gray-600 dark:text-gray-400 mt-1">
           <ol className="breadcrumb flex space-x-2">
             <li>
-              <a href="/" className="text-blue-600 hover:underline">Home</a>
+              <a href="/" className="text-blue-600 hover:underline">
+                Home
+              </a>
             </li>
             <li>/</li>
             <li>Dashboard</li>

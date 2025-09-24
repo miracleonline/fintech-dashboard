@@ -1,8 +1,7 @@
-// src/layouts/Layout.tsx
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import jwt_decode from "jwt-decode";
-import Sidebar from "./Sidebar";
+import { jwtDecode } from "jwt-decode";
+import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -20,7 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      const decoded: any = jwt_decode(token);
+      const decoded: { exp: number } = jwtDecode(token);
 
       // Check expiry
       const currentTime = Date.now() / 1000;
