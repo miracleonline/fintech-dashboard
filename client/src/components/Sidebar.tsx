@@ -60,7 +60,6 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     <li>
       <Link
         to={to}
-        onClick={onClose}
         className={cn(
           "flex items-center p-2 rounded-lg transition hover:bg-gray-200 dark:hover:bg-gray-800",
           location.pathname === to ? "bg-gray-100 dark:bg-gray-800 font-semibold" : ""
@@ -79,10 +78,11 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
 
   return (
     <aside
-      className={`sidebar-scroll w-[280px] h-[calc(100vh-70px)] bg-white dark:bg-gray-900 border-r border-gray-200 
-                  dark:border-gray-700 fixed top-[70px] left-0 z-40 overflow-y-auto transition-transform duration-300 ease-in-out 
-                  ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+      className={`fixed top-[70px] left-0 z-50 w-[280px] h-[calc(100vh-70px)] overflow-y-auto bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 
+        transition-transform duration-300 ease-in-out
+        ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
     >
+
       <div className="lg:hidden flex justify-end px-3 pt-3">
         <button onClick={onClose} className="text-gray-700 dark:text-white text-2xl">
           <i className="bi bi-x-lg" />
