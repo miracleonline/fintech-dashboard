@@ -50,9 +50,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
     } else {
       setOpenMenu(null); // close all if no match
     }
-
-    onClose();
-  }, [location.pathname, onClose]);
+  }, [location.pathname]);
 
   const toggleMenu = (menu: string) => {
     setOpenMenu((prev) => (prev === menu ? null : menu));

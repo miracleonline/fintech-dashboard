@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLocation } from "react";
 import { useNavigate } from "react-router-dom"; 
 import { jwtDecode } from "jwt-decode";
 import Sidebar from "../components/Sidebar";
@@ -9,6 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -37,6 +38,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       navigate("/login");
     }
   }, [navigate]);
+
+  // Close sidebar on route change if mobile
+  useEffect(() => {
+    if (window.innerWidth < 1024) {
+      setSidebarOpen(false);
+    }
+  }, [location.pathname]);
 
   if (loading) {
     return <div className="text-center py-10">Loading...</div>; // You can replace with spinner
