@@ -80,9 +80,15 @@ export default function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose:
   return (
     <aside
       className={`sidebar-scroll w-[280px] h-[calc(100vh-70px)] bg-white dark:bg-gray-900 border-r border-gray-200 
-                  dark:border-gray-700 fixed top-[70px] left-0 z-40 overflow-y-auto transition-transform duration-300 
+                  dark:border-gray-700 fixed top-[70px] left-0 z-40 overflow-y-auto transition-transform duration-300 ease-in-out 
                   ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
     >
+      <div className="lg:hidden flex justify-end px-3 pt-3">
+        <button onClick={onClose} className="text-gray-700 dark:text-white text-2xl">
+          <i className="bi bi-x-lg" />
+        </button>
+      </div>
+
       <ul className="pt-5 space-y-1 px-3 text-sm text-brand dark:text-brand-light">
         {navItem("/dashboard", "bi-grid", "Dashboard")}
 

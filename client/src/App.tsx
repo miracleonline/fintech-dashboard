@@ -21,6 +21,7 @@ import FaqPage from "./pages/Auth/FaqPage";
 import AccountStatementPage from "./pages/Auth/AccountStatement";
 import LoanApplication from "./pages/Auth/LoanApplication";
 import WalletAndCards from "./pages/Auth/WalletAndCards";
+import LandingPage from "./pages/Auth/LandingPage";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<LandingPage />} />
 
         {/* Protected layout */}
         <Route
