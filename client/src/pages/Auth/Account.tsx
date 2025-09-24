@@ -68,7 +68,7 @@ export default function Account() {
         <div className="col-span-1">
           <div className="card bg-white dark:bg-gray-900 shadow rounded-xl p-6 text-center">
             <img
-              src={`http://localhost:5000${user?.profileImage}`}
+              src={`https://fintech-dashboard-p1y7.onrender.com${user?.profileImage}`}
               alt="Profile"
               className="w-24 h-24 rounded-full mx-auto mb-3"
             />

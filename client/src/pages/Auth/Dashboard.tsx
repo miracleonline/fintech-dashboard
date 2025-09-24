@@ -161,6 +161,11 @@ export default function Dashboard() {
         />
       </div>
 
+      {/* Transaction History */}
+      <div className="mt-8">
+        <TransactionTable />
+      </div>
+
       {/* Charts Section */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         {/* Reports Chart */}
@@ -327,11 +332,6 @@ export default function Dashboard() {
             <p className="text-sm">From $50,000+</p>
           </div>
         </div>
-      </div>
-
-      {/* Transaction History */}
-      <div className="mt-8">
-        <TransactionTable />
       </div>
 
       {showModal && (

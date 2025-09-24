@@ -293,7 +293,7 @@ export default function UpdateAccount() {
                   />
                 ) : form.profileImage ? (
                   <img
-                    src={`http://localhost:5000${form.profileImage}`}
+                    src={`https://fintech-dashboard-p1y7.onrender.com${form.profileImage}`}
                     alt="Current Profile"
                     className="w-24 h-24 rounded-full object-cover border"
                   />

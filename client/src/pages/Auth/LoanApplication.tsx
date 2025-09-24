@@ -339,6 +339,7 @@ export default function LoanApplication() {
           {loans.length === 0 ? (
             <p className="text-gray-500 dark:text-gray-300">No loan applications found.</p>
           ) : (
+          <div className="overflow-x-auto max-w-full">
             <table className="min-w-full text-left">
               <thead>
                 <tr className="bg-gray-100 dark:bg-gray-100">
@@ -378,6 +379,7 @@ export default function LoanApplication() {
                 ))}
               </tbody>
             </table>
+          </div>
           )}
         </div>
       )}

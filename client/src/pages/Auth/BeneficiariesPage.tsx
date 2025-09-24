@@ -173,6 +173,7 @@ export default function BeneficiariesPage() {
           {beneficiaries.length === 0 ? (
             <p className="text-gray-500">No beneficiaries added yet.</p>
           ) : (
+          <div className="overflow-x-auto max-w-full">
             <table className="min-w-full text-left">
               <thead>
                 <tr className="bg-gray-100">
@@ -213,6 +214,7 @@ export default function BeneficiariesPage() {
                 ))}
               </tbody>
             </table>
+          </div>
           )}
         </div>
       )}
