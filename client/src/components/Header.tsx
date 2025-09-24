@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import logo from "../assets/images/fintech.jpg";
 
 export default function Header({ onToggleSidebar }: { onToggleSidebar: () => void }) {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
@@ -31,7 +32,7 @@ export default function Header({ onToggleSidebar }: { onToggleSidebar: () => voi
           <i className="bi bi-list" />
         </button>
         <a href="/" className="flex items-center space-x-2">
-          <img src="/src/assets/images/fintech.jpg" alt="logo" className="h-8 w-8" />
+          <img src={logo} alt="logo" className="h-8 w-8" />
           <span className="hidden lg:block font-bold text-gray-800 dark:text-white text-lg">Pinnacles</span>
         </a>
       </div>
