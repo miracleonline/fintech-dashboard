@@ -54,8 +54,48 @@ export default function TransactionTable() {
         const data = await res.json();
 
         if (data.success) {
-          setTransactions(data.transactions);
-          setMeta(data.meta);
+          // Mock transactions
+          const mockTransactions: Transaction[] = [
+            {
+              id: "mock-1",
+              type: "credit",
+              amount: 1500,
+              description: "Salary Payment",
+              occurredAt: new Date().toISOString(),
+              status: "Completed",
+            },
+            {
+              id: "mock-2",
+              type: "debit",
+              amount: 200,
+              description: "Grocery Shopping",
+              occurredAt: new Date().toISOString(),
+              status: "Completed",
+            },
+            {
+              id: "mock-3",
+              type: "credit",
+              amount: 500,
+              description: "Refund from Vendor",
+              occurredAt: new Date().toISOString(),
+              status: "Pending",
+            },
+            {
+              id: "mock-4",
+              type: "debit",
+              amount: 300,
+              description: "Utility Bill",
+              occurredAt: new Date().toISOString(),
+              status: "Failed",
+            },
+          ];
+
+          // Include mock data to fetched transactions
+          setTransactions([...data.transactions, ...mockTransactions]);
+          setMeta({
+            ...data.meta,
+            total: data.meta.total + mockTransactions.length,
+          });
         }
       } catch (err) {
         console.error("Error fetching transactions", err);

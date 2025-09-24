@@ -162,7 +162,7 @@ export default function Dashboard() {
       </div>
 
       {/* Transaction History */}
-      <div className="mt-8">
+      <div className="mt-8 mb-6">
         <TransactionTable />
       </div>
 
@@ -269,7 +269,19 @@ export default function Dashboard() {
               <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 Insurance updates for Q3
               </h3>
+              <p className="text-xs text-gray-500">10 hours ago</p>
+            </li>
+            <li className="border-b border-gray-200 dark:border-gray-700 pb-2">
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Top 5 trending assets this week
+              </h3>
               <p className="text-xs text-gray-500">1 day ago</p>
+            </li>
+            <li className="border-b border-gray-200 dark:border-gray-700 pb-2">
+              <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                Expert financial analysis & tips
+              </h3>
+              <p className="text-xs text-gray-500">2 days ago</p>
             </li>
           </ul>
         </div>
@@ -277,12 +289,12 @@ export default function Dashboard() {
         {/* Top Selling Plans */}
         <div className="bg-white dark:bg-gray-900 rounded-xl shadow p-6">
           <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-4">
-            Top Selling Plans
+            Top Selling Stocks
           </h2>
           <ul className="space-y-3">
             <li className="flex justify-between text-sm">
               <span className="text-gray-600 dark:text-gray-300">
-                Pinnacle Gold
+                Zenith PLC
               </span>
               <span className="font-semibold text-gray-800 dark:text-white">
                 $12,000
@@ -290,10 +302,26 @@ export default function Dashboard() {
             </li>
             <li className="flex justify-between text-sm">
               <span className="text-gray-600 dark:text-gray-300">
-                Growth Plus
+                Dangote LTD
               </span>
               <span className="font-semibold text-gray-800 dark:text-white">
                 $9,500
+              </span>
+            </li>
+            <li className="flex justify-between text-sm">
+              <span className="text-gray-600 dark:text-gray-300">
+                Innoson Motors
+              </span>
+              <span className="font-semibold text-gray-800 dark:text-white">
+                $7,500
+              </span>
+            </li>
+            <li className="flex justify-between text-sm">
+              <span className="text-gray-600 dark:text-gray-300">
+                Unilever PLC
+              </span>
+              <span className="font-semibold text-gray-800 dark:text-white">
+                $4,500
               </span>
             </li>
           </ul>
